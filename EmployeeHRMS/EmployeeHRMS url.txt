@@ -1,8 +1,0 @@
-EmployeeHRMSRepo url
-
-https://github.com/cgjavatrg/EmployeeHRMS.git
-
-
-Personal Access token (PAT )
-
-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
