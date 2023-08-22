@@ -43,7 +43,14 @@ public class TitleProducerS implements Serializable {
         this.titlesPK = new TitlesPK(empNo, title, fromDate);
     }
 
-    public TitlesPK getTitlesPK() {
+    
+    public TitleProducerS(TitlesPK titlesPK, LocalDate toDate) {
+		super();
+		this.titlesPK = titlesPK;
+		this.toDate = toDate;
+	}
+
+	public TitlesPK getTitlesPK() {
         return titlesPK;
     }
 
