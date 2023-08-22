@@ -36,7 +36,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	@Override
 	public Integer findEmployeesCountByHireDateBetween(int years) {
-		// TODO Auto-generated method stub
 		LocalDate today=LocalDate.now();
 		List<EmployeeDTO> elist=employeeRepository.findByHireDateBetween(today.minusYears(years),today );
 		if (elist==null || elist.isEmpty()) {
@@ -48,7 +47,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	@Override
 	public List<EmployeeDTO> findEmployeesByHireDateYearGreaterThan(int year) throws RecordNotFoundException {
-	//	LocalDate startDate=LocalDate.of(year, Month.JANUARY, 1);
 		LocalDate endDate=LocalDate.of(year, Month.DECEMBER, 31);
 		List<EmployeeDTO> elist=employeeRepository.findByHireDateGreaterThan(endDate);
 		if (elist==null || elist.isEmpty()) {
