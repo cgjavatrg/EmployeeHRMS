@@ -44,6 +44,7 @@ public class ExceptionAdvice {
 	  
 	  
 	  @ExceptionHandler(Exception.class)
+	  
 	  @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	  String generalHandler1(Exception ex) {
 		 Throwable t=ex.getCause();
