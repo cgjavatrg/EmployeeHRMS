@@ -62,7 +62,7 @@ public class EmployeeHRMSConsumer {
 		}
 		
 		if(fromDate.getYear() < 1985) {
-			throw new InvalidDataException("Invalid Year!! Year should be after 1985");
+			throw new InvalidDataException("Invalid Year!! Year should be greter than or equals 1985");
 		}
 		
 		return employeeService.findByDeptAndFromDate(deptNo, fromDate);

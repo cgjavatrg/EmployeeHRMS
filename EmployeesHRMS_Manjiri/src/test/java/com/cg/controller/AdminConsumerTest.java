@@ -35,9 +35,15 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import com.cg.entity.CurrentDeptEmp;
 import com.cg.entity.DeptEmpPK;
 import com.cg.entity.DeptEmpProducerS;
+import com.cg.entity.DeptManagerPK;
+import com.cg.entity.DeptManagerS;
 import com.cg.entity.EmployeeDTO;
+import com.cg.entity.TitleProducerS;
+import com.cg.entity.TitlesPK;
+import com.cg.exception.InvalidDataException;
 import com.cg.exception.RecordNotFoundException;
 import com.cg.security.JwtRequestFilter;
 import com.cg.security.JwtUtil;
@@ -448,8 +454,381 @@ class AdminConsumerTest {
 			        .andExpect(status().isOk())
 			        .andDo(print());
 		
+	}
+	
+	// testing Assign manager to specific department for specific duration.
+	
+	@Test
+	@Order(15)
+	public void testassignManagerToDeptManagerExists() throws JsonProcessingException, Exception {
+		DeptManagerS previousRec = new DeptManagerS();
+		previousRec.setDeptManagerPK(new DeptManagerPK(110,"d007"));
+		previousRec.setFromDate(LocalDate.of(2013,Month.FEBRUARY, 12));
+		previousRec.setToDate(LocalDate.of(9999, Month.JANUARY, 1));
+		
+		DeptManagerS newRec = new DeptManagerS();
+		newRec.setDeptManagerPK(new DeptManagerPK(110,"d007"));
+		newRec.setFromDate(LocalDate.of(2018,Month.FEBRUARY, 12));
+		newRec.setToDate(LocalDate.of(9999, Month.JANUARY, 1));
+		
+		// stubbing
+		when(deptManagerService.findByDeptManagerPK(newRec.getDeptManagerPK())).thenReturn(previousRec);
+		
+		String url="/api/v1/adminpayrollconsumer/assignmgr";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isBadRequest())
+			        .andDo(print());
+		
 		
 	}
+	
+	@Test
+	@Order(16)
+	public void testassignManagerToDeptNotInSameDeprtment() throws JsonProcessingException, Exception {
+		CurrentDeptEmp deptemp=new CurrentDeptEmp();
+		deptemp.setEmpNo(110);
+		deptemp.setDeptNo("d008");
+		deptemp.setFromDate(LocalDate.of(2014,Month.AUGUST, 22));
+		deptemp.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		DeptManagerS newRec = new DeptManagerS();
+		newRec.setDeptManagerPK(new DeptManagerPK(110,"d007"));
+		newRec.setFromDate(LocalDate.of(2018,Month.FEBRUARY, 12));
+		newRec.setToDate(LocalDate.of(9999, Month.JANUARY, 1));
+		
+		// stubbing
+		when(deptManagerService.findByDeptManagerPK(newRec.getDeptManagerPK())).thenReturn(null);
+		when(currentDeptEmpService.findByEmpno(newRec.getDeptManagerPK().getEmpNo())).thenReturn(deptemp);
+		
+		
+		String url="/api/v1/adminpayrollconsumer/assignmgr";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isBadRequest())
+			        .andDo(print());
+		
+		
+	}
+	
+	@Test
+	@Order(17)
+	public void testassignManagerToDeptInvalidFromDate() throws JsonProcessingException, Exception {
+		CurrentDeptEmp deptemp=new CurrentDeptEmp();
+		deptemp.setEmpNo(110);
+		deptemp.setDeptNo("d007");
+		deptemp.setFromDate(LocalDate.of(2014,Month.AUGUST, 22));
+		deptemp.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		DeptManagerS previousRec = new DeptManagerS();
+		previousRec.setDeptManagerPK(new DeptManagerPK(110,"d007"));
+		previousRec.setFromDate(LocalDate.of(2014,Month.FEBRUARY, 12));
+		previousRec.setToDate(LocalDate.of(9999, Month.JANUARY, 1));
+		// from date of new record is before from date of previous record
+		DeptManagerS newRec = new DeptManagerS();
+		newRec.setDeptManagerPK(new DeptManagerPK(112,"d007"));
+		newRec.setFromDate(LocalDate.of(2014,Month.FEBRUARY, 12));
+		newRec.setToDate(LocalDate.of(9999, Month.JANUARY, 1));
+		
+		// stubbing
+		when(deptManagerService.findByDeptManagerPK(newRec.getDeptManagerPK())).thenReturn(null);
+		when(currentDeptEmpService.findByEmpno(newRec.getDeptManagerPK().getEmpNo())).thenReturn(deptemp);
+		when(deptManagerService.findByDeptNoAndMaxFromDate(newRec.getDeptManagerPK().getDeptNo())).thenReturn(previousRec);
+		
+		String url="/api/v1/adminpayrollconsumer/assignmgr";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isBadRequest())
+			        .andDo(print());
+	
+	}
+	
+	@Test
+	@Order(18)
+	public void testassignManagerToDeptAfterFromDate() throws JsonProcessingException, Exception {
+		CurrentDeptEmp deptemp=new CurrentDeptEmp();
+		deptemp.setEmpNo(110);
+		deptemp.setDeptNo("d007");
+		deptemp.setFromDate(LocalDate.of(2014,Month.AUGUST, 22));
+		deptemp.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		DeptManagerS previousRec = new DeptManagerS();
+		previousRec.setDeptManagerPK(new DeptManagerPK(110,"d007"));
+		previousRec.setFromDate(LocalDate.of(2014,Month.FEBRUARY, 12));
+		previousRec.setToDate(LocalDate.of(9999, Month.JANUARY, 1));
+		// from date of new record is before to date
+		DeptManagerS newRec = new DeptManagerS();
+		newRec.setDeptManagerPK(new DeptManagerPK(112,"d007"));
+		newRec.setFromDate(LocalDate.of(2016,Month.FEBRUARY, 12));
+		newRec.setToDate(LocalDate.of(2015, Month.JANUARY, 1));
+		
+		// stubbing
+		when(deptManagerService.findByDeptManagerPK(newRec.getDeptManagerPK())).thenReturn(null);
+		when(currentDeptEmpService.findByEmpno(newRec.getDeptManagerPK().getEmpNo())).thenReturn(deptemp);
+		when(deptManagerService.findByDeptNoAndMaxFromDate(newRec.getDeptManagerPK().getDeptNo())).thenReturn(previousRec);
+		
+		String url="/api/v1/adminpayrollconsumer/assignmgr";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isBadRequest())
+			        .andDo(print());
+		
+		
+	}
+	
+	@Test
+	@Order(19)
+	public void testassignManagerToDeptNotEligible() throws JsonProcessingException, Exception {
+		CurrentDeptEmp deptemp=new CurrentDeptEmp();
+		deptemp.setEmpNo(110);
+		deptemp.setDeptNo("d007");
+		deptemp.setFromDate(LocalDate.of(2014,Month.AUGUST, 22));
+		deptemp.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		DeptManagerS previousRec = new DeptManagerS();
+		previousRec.setDeptManagerPK(new DeptManagerPK(110,"d007"));
+		previousRec.setFromDate(LocalDate.of(2014,Month.FEBRUARY, 12));
+		previousRec.setToDate(LocalDate.of(9999, Month.JANUARY, 1));
+		// from date of new record and  from date of previous record differnce is less than 5
+		DeptManagerS newRec = new DeptManagerS();
+		newRec.setDeptManagerPK(new DeptManagerPK(112,"d007"));
+		newRec.setFromDate(LocalDate.of(2016,Month.FEBRUARY, 12));
+		newRec.setToDate(LocalDate.of(9999, Month.JANUARY, 1));
+		
+		// stubbing
+		when(deptManagerService.findByDeptManagerPK(newRec.getDeptManagerPK())).thenReturn(null);
+		when(currentDeptEmpService.findByEmpno(newRec.getDeptManagerPK().getEmpNo())).thenReturn(deptemp);
+		when(deptManagerService.findByDeptNoAndMaxFromDate(newRec.getDeptManagerPK().getDeptNo())).thenReturn(previousRec);
+		when(deptManagerService.assignManagerToDept(newRec)).thenThrow(new InvalidDataException("Not eligible"));
+		String url="/api/v1/adminpayrollconsumer/assignmgr";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isBadRequest())
+			        .andDo(print());
+		
+		
+	}
+	
+	@Test
+	@Order(20)
+	public void testassignManagerToDept() throws JsonProcessingException, Exception {
+		CurrentDeptEmp deptemp=new CurrentDeptEmp();
+		deptemp.setEmpNo(110);
+		deptemp.setDeptNo("d007");
+		deptemp.setFromDate(LocalDate.of(2014,Month.FEBRUARY, 22));
+		deptemp.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		DeptManagerS previousRec = new DeptManagerS();
+		previousRec.setDeptManagerPK(new DeptManagerPK(110,"d007"));
+		previousRec.setFromDate(LocalDate.of(2014,Month.FEBRUARY, 12));
+		previousRec.setToDate(LocalDate.of(9999, Month.JANUARY, 1));
+		// from date of new record is before to date
+		DeptManagerS newRec = new DeptManagerS();
+		newRec.setDeptManagerPK(new DeptManagerPK(112,"d007"));
+		newRec.setFromDate(LocalDate.of(2019,Month.FEBRUARY, 12));
+		newRec.setToDate(LocalDate.of(9999, Month.JANUARY, 1));
+		
+		// stubbing
+		when(deptManagerService.findByDeptManagerPK(newRec.getDeptManagerPK())).thenReturn(null);
+		when(currentDeptEmpService.findByEmpno(newRec.getDeptManagerPK().getEmpNo())).thenReturn(deptemp);
+		when(deptManagerService.findByDeptNoAndMaxFromDate(newRec.getDeptManagerPK().getDeptNo())).thenReturn(previousRec);
+		when(deptManagerService.assignManagerToDept(newRec)).thenReturn("Employee is assigned  as manager for department successfully.");
+		String url="/api/v1/adminpayrollconsumer/assignmgr";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isOk())
+			        .andDo(print());
+	
+	}
+	
+	// testing assigning title designation to employee
+	@Test
+	@Order(21)
+	public void testassignTitleToEmployeeSameRecord() throws JsonProcessingException, Exception {
+		TitleProducerS samerecord=new TitleProducerS();
+		TitlesPK tpk=new TitlesPK(6, "Senior Staff", LocalDate.of(2013,Month.FEBRUARY, 12));
+		samerecord.setTitlesPK(tpk);
+		samerecord.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		TitleProducerS newRec=new TitleProducerS();
+		TitlesPK tpk1=new TitlesPK(6, "Senior Staff", LocalDate.of(2013,Month.FEBRUARY, 12));
+		newRec.setTitlesPK(tpk1);
+		newRec.setToDate(LocalDate.of(2019,Month.JANUARY, 1));
+		
+		when(titlesService.findById(newRec.getTitlesPK())).thenReturn(samerecord);
+		
+		String url="/api/v1/adminhrmslconsumer/assigntitle";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isBadRequest())
+			        .andDo(print());
+		
+	}
+	
+	@Test
+	@Order(22)
+	public void testassignTitleToEmployeeSameTitle() throws JsonProcessingException, Exception {
+		TitleProducerS previousRec=new TitleProducerS();
+		TitlesPK tpk=new TitlesPK(6, "Senior Staff", LocalDate.of(2013,Month.FEBRUARY, 12));
+		previousRec.setTitlesPK(tpk);
+		previousRec.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		TitleProducerS newRec=new TitleProducerS();
+		TitlesPK tpk1=new TitlesPK(6, "Senior Staff", LocalDate.of(2018,Month.FEBRUARY, 12));
+		newRec.setTitlesPK(tpk1);
+		newRec.setToDate(LocalDate.of(2019,Month.JANUARY, 1));
+		
+		when(titlesService.findById(newRec.getTitlesPK())).thenReturn(null);
+		when(titlesService.findByEmpNoAndMaxFromDate(newRec.getTitlesPK().getEmpNo())).thenReturn(previousRec);
+		
+		String url="/api/v1/adminhrmslconsumer/assigntitle";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isBadRequest())
+			        .andDo(print());
+		
+	}
+	
+	@Test
+	@Order(23)
+	public void testassignTitleToEmployeeAfterFromDate() throws JsonProcessingException, Exception {
+		TitleProducerS previousRec=new TitleProducerS();
+		TitlesPK tpk=new TitlesPK(6, "Senior Staff", LocalDate.of(2013,Month.FEBRUARY, 12));
+		previousRec.setTitlesPK(tpk);
+		previousRec.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		// new record from date is before from date of previous record
+		TitleProducerS newRec=new TitleProducerS();
+		TitlesPK tpk1=new TitlesPK(6, "Manager", LocalDate.of(2012,Month.FEBRUARY, 12));
+		newRec.setTitlesPK(tpk1);
+		newRec.setToDate(LocalDate.of(2019,Month.JANUARY, 1));
+		
+		when(titlesService.findById(newRec.getTitlesPK())).thenReturn(null);
+		when(titlesService.findByEmpNoAndMaxFromDate(newRec.getTitlesPK().getEmpNo())).thenReturn(previousRec);
+		
+		String url="/api/v1/adminhrmslconsumer/assigntitle";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isBadRequest())
+			        .andDo(print());
+		
+	}
+	
+	@Test
+	@Order(24)
+	public void testassignTitleToEmployeeAfterFromDate1() throws JsonProcessingException, Exception {
+		TitleProducerS previousRec=new TitleProducerS();
+		TitlesPK tpk=new TitlesPK(6, "Senior Staff", LocalDate.of(2013,Month.FEBRUARY, 12));
+		previousRec.setTitlesPK(tpk);
+		previousRec.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		// new record from date is after to date 
+		TitleProducerS newRec=new TitleProducerS();
+		TitlesPK tpk1=new TitlesPK(6, "Manager", LocalDate.of(2019,Month.FEBRUARY, 12));
+		newRec.setTitlesPK(tpk1);
+		newRec.setToDate(LocalDate.of(2016,Month.JANUARY, 1));
+		
+		when(titlesService.findById(newRec.getTitlesPK())).thenReturn(null);
+		when(titlesService.findByEmpNoAndMaxFromDate(newRec.getTitlesPK().getEmpNo())).thenReturn(previousRec);
+		
+		String url="/api/v1/adminhrmslconsumer/assigntitle";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isBadRequest())
+			        .andDo(print());
+		
+	}
+	
+	@Test
+	@Order(25)
+	public void testassignTitleToEmployeeNotEligible() throws JsonProcessingException, Exception {
+		TitleProducerS previousRec=new TitleProducerS();
+		TitlesPK tpk=new TitlesPK(6, "Senior Staff", LocalDate.of(2013,Month.FEBRUARY, 12));
+		previousRec.setTitlesPK(tpk);
+		previousRec.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		// new record from date is after to date 
+		TitleProducerS newRec=new TitleProducerS();
+		TitlesPK tpk1=new TitlesPK(6, "Manager", LocalDate.of(2015,Month.FEBRUARY, 12));
+		newRec.setTitlesPK(tpk1);
+		newRec.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		when(titlesService.findById(newRec.getTitlesPK())).thenReturn(null);
+		when(titlesService.findByEmpNoAndMaxFromDate(newRec.getTitlesPK().getEmpNo())).thenReturn(previousRec);
+		when(titlesService.assignTitleToEmployee(newRec)).thenThrow(new InvalidDataException("Not Eligible"));
+		
+		String url="/api/v1/adminhrmslconsumer/assigntitle";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isBadRequest())
+			        .andDo(print());
+		
+	}
+
+	@Test
+	@Order(26)
+	public void testassignTitleToEmployeeSuccess() throws JsonProcessingException, Exception {
+		TitleProducerS previousRec=new TitleProducerS();
+		TitlesPK tpk=new TitlesPK(6, "Senior Staff", LocalDate.of(2013,Month.FEBRUARY, 12));
+		previousRec.setTitlesPK(tpk);
+		previousRec.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		// new record from date is after to date 
+		TitleProducerS newRec=new TitleProducerS();
+		TitlesPK tpk1=new TitlesPK(6, "Manager", LocalDate.of(2019,Month.FEBRUARY, 12));
+		newRec.setTitlesPK(tpk1);
+		newRec.setToDate(LocalDate.of(9999,Month.JANUARY, 1));
+		
+		when(titlesService.findById(newRec.getTitlesPK())).thenReturn(null);
+		when(titlesService.findByEmpNoAndMaxFromDate(newRec.getTitlesPK().getEmpNo())).thenReturn(previousRec);
+		when(titlesService.assignTitleToEmployee(newRec)).thenReturn("Employee is assigned   with title  from fromdate to enddate");
+		
+		String url="/api/v1/adminhrmslconsumer/assigntitle";
+		
+		 mockMvc.perform(post(url)
+				 .contentType(MediaType.APPLICATION_JSON)
+				 .header("AUTHORIZATION","Bearer "+token)
+			        .content(objectMapper.writeValueAsString(newRec)))
+			        .andExpect(status().isOk())
+			        .andDo(print());
+		
+	}
+
+	
+
 	
 
 
