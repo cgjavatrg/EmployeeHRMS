@@ -1,0 +1,11 @@
+For Spring Project
+GitHub url is
+https://github.com/cgjavatrg/EmployeeHRMS
+
+
+
+
+For Angular Project
+github url is
+
+https://github.com/cgjavatrg/AngularEmployeeHRMS
