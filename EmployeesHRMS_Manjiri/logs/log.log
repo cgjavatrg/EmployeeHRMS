@@ -1455,3 +1455,268 @@
 24-08-2023 15:20:29.868 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
 24-08-2023 15:20:29.870 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
 24-08-2023 15:20:29.881 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+24-08-2023 16:18:28.557 [main] INFO  com.cg.controller.AdminConsumerTest.logStarting - Starting AdminConsumerTest using Java 17.0.7 with PID 23928 (started by manji in D:\CG_Self_Eval_4_Aug_2023\SpringBootJWT_JPA\EmployeesHRMS_Manjiri)
+24-08-2023 16:18:28.560 [main] INFO  com.cg.controller.AdminConsumerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+24-08-2023 16:18:29.385 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+24-08-2023 16:18:29.476 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 82 ms. Found 7 JPA repository interfaces.
+24-08-2023 16:18:31.388 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+24-08-2023 16:18:31.473 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.2.6.Final
+24-08-2023 16:18:31.479 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000406: Using bytecode reflection optimizer
+24-08-2023 16:18:31.718 [main] INFO  o.h.b.i.BytecodeProviderInitiator.buildBytecodeProvider - HHH000021: Bytecode provider name : bytebuddy
+24-08-2023 16:18:31.730 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+24-08-2023 16:18:31.757 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+24-08-2023 16:18:32.260 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@912747d
+24-08-2023 16:18:32.263 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+24-08-2023 16:18:32.292 [main] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+24-08-2023 16:18:32.814 [main] INFO  o.h.b.i.BytecodeProviderInitiator.buildBytecodeProvider - HHH000021: Bytecode provider name : bytebuddy
+24-08-2023 16:18:33.532 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-08-2023 16:18:33.536 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+24-08-2023 16:18:33.822 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+24-08-2023 16:18:35.718 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@532782f5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c2d4274, org.springframework.security.web.context.SecurityContextHolderFilter@1aaa3406, org.springframework.security.web.header.HeaderWriterFilter@72a45b71, org.springframework.web.filter.CorsFilter@18b8518b, org.springframework.security.web.authentication.logout.LogoutFilter@89017e5, com.cg.security.JwtRequestFilter@1a4564a2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35c95587, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b14628b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6960e7a6, org.springframework.security.web.session.SessionManagementFilter@70a26eca, org.springframework.security.web.access.ExceptionTranslationFilter@3d268a2c, org.springframework.security.web.access.intercept.AuthorizationFilter@4af5c14c]
+24-08-2023 16:18:36.234 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory.<clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+24-08-2023 16:18:37.152 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+24-08-2023 16:18:37.153 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+24-08-2023 16:18:37.155 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 2 ms
+24-08-2023 16:18:37.187 [main] INFO  com.cg.controller.AdminConsumerTest.logStarted - Started AdminConsumerTest in 8.925 seconds (process running for 10.174)
+24-08-2023 16:18:37.505 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:37 IST 2023 ,1692874117502
+24-08-2023 16:18:37.508 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892117502 , Date = Thu Aug 24 21:18:37 IST 2023
+24-08-2023 16:18:37.918 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:37 IST 2023 ,1692874117918
+24-08-2023 16:18:37.919 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892117918 , Date = Thu Aug 24 21:18:37 IST 2023
+24-08-2023 16:18:37.931 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Number of years. Minimum years should be 1
+24-08-2023 16:18:38.044 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:38 IST 2023 ,1692874118044
+24-08-2023 16:18:38.045 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892118044 , Date = Thu Aug 24 21:18:38 IST 2023
+24-08-2023 16:18:38.163 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:38 IST 2023 ,1692874118163
+24-08-2023 16:18:38.164 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892118163 , Date = Thu Aug 24 21:18:38 IST 2023
+24-08-2023 16:18:38.172 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Number of years. Minimum years should be 1
+24-08-2023 16:18:38.288 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:38 IST 2023 ,1692874118288
+24-08-2023 16:18:38.288 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892118288 , Date = Thu Aug 24 21:18:38 IST 2023
+24-08-2023 16:18:38.462 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:38 IST 2023 ,1692874118462
+24-08-2023 16:18:38.463 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892118462 , Date = Thu Aug 24 21:18:38 IST 2023
+24-08-2023 16:18:38.468 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Year. Year should start from 1984.
+24-08-2023 16:18:38.580 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:38 IST 2023 ,1692874118580
+24-08-2023 16:18:38.580 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892118580 , Date = Thu Aug 24 21:18:38 IST 2023
+24-08-2023 16:18:38.699 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:38 IST 2023 ,1692874118699
+24-08-2023 16:18:38.699 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892118699 , Date = Thu Aug 24 21:18:38 IST 2023
+24-08-2023 16:18:38.706 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Year. Year should start from 1984.
+24-08-2023 16:18:38.830 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:38 IST 2023 ,1692874118830
+24-08-2023 16:18:38.831 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892118830 , Date = Thu Aug 24 21:18:38 IST 2023
+24-08-2023 16:18:38.967 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:38 IST 2023 ,1692874118967
+24-08-2023 16:18:38.968 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892118967 , Date = Thu Aug 24 21:18:38 IST 2023
+24-08-2023 16:18:38.976 [main] ERROR com.cg.advice.ExceptionAdvice.recordNotFoundHandler - null
+24-08-2023 16:18:39.084 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:39 IST 2023 ,1692874119083
+24-08-2023 16:18:39.084 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892119083 , Date = Thu Aug 24 21:18:39 IST 2023
+24-08-2023 16:18:39.124 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Record exist. Please assign different Department
+24-08-2023 16:18:39.227 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:39 IST 2023 ,1692874119227
+24-08-2023 16:18:39.227 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892119227 , Date = Thu Aug 24 21:18:39 IST 2023
+24-08-2023 16:18:39.231 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid From Date
+24-08-2023 16:18:39.331 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:39 IST 2023 ,1692874119330
+24-08-2023 16:18:39.333 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892119330 , Date = Thu Aug 24 21:18:39 IST 2023
+24-08-2023 16:18:39.343 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Dates. 'fromDate' should be before 'toDate'
+24-08-2023 16:18:39.441 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:39 IST 2023 ,1692874119441
+24-08-2023 16:18:39.441 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892119441 , Date = Thu Aug 24 21:18:39 IST 2023
+24-08-2023 16:18:39.541 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:39 IST 2023 ,1692874119541
+24-08-2023 16:18:39.541 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892119541 , Date = Thu Aug 24 21:18:39 IST 2023
+24-08-2023 16:18:39.549 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Record exists. Please assign different employee as manager
+24-08-2023 16:18:39.642 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:39 IST 2023 ,1692874119642
+24-08-2023 16:18:39.642 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892119642 , Date = Thu Aug 24 21:18:39 IST 2023
+24-08-2023 16:18:39.647 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Employee is not in the same department. Assign Same department employee as Manager
+24-08-2023 16:18:39.743 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:39 IST 2023 ,1692874119743
+24-08-2023 16:18:39.744 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892119743 , Date = Thu Aug 24 21:18:39 IST 2023
+24-08-2023 16:18:39.748 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invlid From Date
+24-08-2023 16:18:39.846 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:39 IST 2023 ,1692874119846
+24-08-2023 16:18:39.846 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892119846 , Date = Thu Aug 24 21:18:39 IST 2023
+24-08-2023 16:18:39.851 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Dates. 'fromDate' should be before 'toDate'
+24-08-2023 16:18:39.948 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:39 IST 2023 ,1692874119948
+24-08-2023 16:18:39.949 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892119948 , Date = Thu Aug 24 21:18:39 IST 2023
+24-08-2023 16:18:39.956 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Not eligible
+24-08-2023 16:18:40.052 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:40 IST 2023 ,1692874120052
+24-08-2023 16:18:40.053 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892120052 , Date = Thu Aug 24 21:18:40 IST 2023
+24-08-2023 16:18:40.150 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:40 IST 2023 ,1692874120150
+24-08-2023 16:18:40.151 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892120150 , Date = Thu Aug 24 21:18:40 IST 2023
+24-08-2023 16:18:40.158 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Record Exists. Choose another title and from date
+24-08-2023 16:18:40.259 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:40 IST 2023 ,1692874120259
+24-08-2023 16:18:40.260 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892120259 , Date = Thu Aug 24 21:18:40 IST 2023
+24-08-2023 16:18:40.265 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Change Title
+24-08-2023 16:18:40.362 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:40 IST 2023 ,1692874120362
+24-08-2023 16:18:40.362 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892120362 , Date = Thu Aug 24 21:18:40 IST 2023
+24-08-2023 16:18:40.367 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invlid From Date
+24-08-2023 16:18:40.460 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:40 IST 2023 ,1692874120460
+24-08-2023 16:18:40.460 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892120460 , Date = Thu Aug 24 21:18:40 IST 2023
+24-08-2023 16:18:40.465 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Dates. 'fromDate' should be before 'toDate'
+24-08-2023 16:18:40.555 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:40 IST 2023 ,1692874120555
+24-08-2023 16:18:40.555 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892120555 , Date = Thu Aug 24 21:18:40 IST 2023
+24-08-2023 16:18:40.561 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Not Eligible
+24-08-2023 16:18:40.655 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:40 IST 2023 ,1692874120655
+24-08-2023 16:18:40.656 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892120655 , Date = Thu Aug 24 21:18:40 IST 2023
+24-08-2023 16:18:40.677 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [com.cg.controller.EmployeeHRMSConsumerTest]: EmployeeHRMSConsumerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+24-08-2023 16:18:40.683 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration com.cg.EmployeesHrmsManjiriApplication for test class com.cg.controller.EmployeeHRMSConsumerTest
+24-08-2023 16:18:40.726 [main] INFO  c.c.c.EmployeeHRMSConsumerTest.logStarting - Starting EmployeeHRMSConsumerTest using Java 17.0.7 with PID 23928 (started by manji in D:\CG_Self_Eval_4_Aug_2023\SpringBootJWT_JPA\EmployeesHRMS_Manjiri)
+24-08-2023 16:18:40.727 [main] INFO  c.c.c.EmployeeHRMSConsumerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+24-08-2023 16:18:41.110 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+24-08-2023 16:18:41.135 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 23 ms. Found 7 JPA repository interfaces.
+24-08-2023 16:18:41.305 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+24-08-2023 16:18:41.320 [main] INFO  o.h.b.i.BytecodeProviderInitiator.buildBytecodeProvider - HHH000021: Bytecode provider name : bytebuddy
+24-08-2023 16:18:41.321 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+24-08-2023 16:18:41.322 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Starting...
+24-08-2023 16:18:41.349 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@785d194d
+24-08-2023 16:18:41.351 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Start completed.
+24-08-2023 16:18:41.352 [main] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+24-08-2023 16:18:41.416 [main] INFO  o.h.b.i.BytecodeProviderInitiator.buildBytecodeProvider - HHH000021: Bytecode provider name : bytebuddy
+24-08-2023 16:18:41.618 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-08-2023 16:18:41.619 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+24-08-2023 16:18:41.687 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+24-08-2023 16:18:42.566 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3b5f3ffb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2331ac37, org.springframework.security.web.context.SecurityContextHolderFilter@13e4acf6, org.springframework.security.web.header.HeaderWriterFilter@9ba905b, org.springframework.web.filter.CorsFilter@3ec4c84a, org.springframework.security.web.authentication.logout.LogoutFilter@37d4b676, com.cg.security.JwtRequestFilter@1f44c6b6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@566806a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5883f0d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@349247c9, org.springframework.security.web.session.SessionManagementFilter@45f3891c, org.springframework.security.web.access.ExceptionTranslationFilter@25c66a5a, org.springframework.security.web.access.intercept.AuthorizationFilter@4142586b]
+24-08-2023 16:18:42.715 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+24-08-2023 16:18:42.715 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+24-08-2023 16:18:42.716 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 0 ms
+24-08-2023 16:18:42.726 [main] INFO  c.c.c.EmployeeHRMSConsumerTest.logStarted - Started EmployeeHRMSConsumerTest in 2.037 seconds (process running for 15.714)
+24-08-2023 16:18:42.846 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:42 IST 2023 ,1692874122846
+24-08-2023 16:18:42.847 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892122846 , Date = Thu Aug 24 21:18:42 IST 2023
+24-08-2023 16:18:42.989 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:42 IST 2023 ,1692874122989
+24-08-2023 16:18:42.991 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892122989 , Date = Thu Aug 24 21:18:42 IST 2023
+24-08-2023 16:18:42.997 [main] ERROR com.cg.advice.ExceptionAdvice.recordNotFoundHandler - No Manager records
+24-08-2023 16:18:43.120 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:43 IST 2023 ,1692874123120
+24-08-2023 16:18:43.121 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892123120 , Date = Thu Aug 24 21:18:43 IST 2023
+24-08-2023 16:18:43.252 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:43 IST 2023 ,1692874123252
+24-08-2023 16:18:43.254 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892123252 , Date = Thu Aug 24 21:18:43 IST 2023
+24-08-2023 16:18:43.261 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Department Number. Department Number should be in format 'd001' 
+24-08-2023 16:18:43.365 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:43 IST 2023 ,1692874123365
+24-08-2023 16:18:43.366 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892123365 , Date = Thu Aug 24 21:18:43 IST 2023
+24-08-2023 16:18:43.370 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Year!! Year should be greter than or equals 1985
+24-08-2023 16:18:43.477 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:43 IST 2023 ,1692874123477
+24-08-2023 16:18:43.477 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892123477 , Date = Thu Aug 24 21:18:43 IST 2023
+24-08-2023 16:18:43.483 [main] ERROR com.cg.advice.ExceptionAdvice.recordNotFoundHandler - No Records
+24-08-2023 16:18:43.591 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:43 IST 2023 ,1692874123591
+24-08-2023 16:18:43.591 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892123591 , Date = Thu Aug 24 21:18:43 IST 2023
+24-08-2023 16:18:43.718 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:43 IST 2023 ,1692874123718
+24-08-2023 16:18:43.718 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892123718 , Date = Thu Aug 24 21:18:43 IST 2023
+24-08-2023 16:18:43.722 [main] ERROR com.cg.advice.ExceptionAdvice.recordNotFoundHandler - No Records of Managers
+24-08-2023 16:18:43.826 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:43 IST 2023 ,1692874123826
+24-08-2023 16:18:43.828 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892123826 , Date = Thu Aug 24 21:18:43 IST 2023
+24-08-2023 16:18:43.927 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:18:43 IST 2023 ,1692874123927
+24-08-2023 16:18:43.927 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692892123927 , Date = Thu Aug 24 21:18:43 IST 2023
+24-08-2023 16:18:43.930 [main] ERROR com.cg.advice.ExceptionAdvice.recordNotFoundHandler - No Title Records 
+24-08-2023 16:18:43.935 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [com.cg.EmployeesHrmsManjiriApplicationTests]: EmployeesHrmsManjiriApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+24-08-2023 16:18:43.941 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration com.cg.EmployeesHrmsManjiriApplication for test class com.cg.EmployeesHrmsManjiriApplicationTests
+24-08-2023 16:18:43.967 [main] INFO  c.c.EmployeesHrmsManjiriApplicationTests.logStarting - Starting EmployeesHrmsManjiriApplicationTests using Java 17.0.7 with PID 23928 (started by manji in D:\CG_Self_Eval_4_Aug_2023\SpringBootJWT_JPA\EmployeesHRMS_Manjiri)
+24-08-2023 16:18:43.967 [main] INFO  c.c.EmployeesHrmsManjiriApplicationTests.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+24-08-2023 16:18:44.222 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+24-08-2023 16:18:44.247 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 24 ms. Found 7 JPA repository interfaces.
+24-08-2023 16:18:44.337 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+24-08-2023 16:18:44.347 [main] INFO  o.h.b.i.BytecodeProviderInitiator.buildBytecodeProvider - HHH000021: Bytecode provider name : bytebuddy
+24-08-2023 16:18:44.348 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+24-08-2023 16:18:44.349 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Starting...
+24-08-2023 16:18:44.365 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a830f73
+24-08-2023 16:18:44.366 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Start completed.
+24-08-2023 16:18:44.366 [main] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+24-08-2023 16:18:44.417 [main] INFO  o.h.b.i.BytecodeProviderInitiator.buildBytecodeProvider - HHH000021: Bytecode provider name : bytebuddy
+24-08-2023 16:18:44.587 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-08-2023 16:18:44.589 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+24-08-2023 16:18:44.764 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+24-08-2023 16:18:45.606 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@61e1ecd5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44a0de07, org.springframework.security.web.context.SecurityContextHolderFilter@35ea9d72, org.springframework.security.web.header.HeaderWriterFilter@30f13b3a, org.springframework.web.filter.CorsFilter@45adac0e, org.springframework.security.web.authentication.logout.LogoutFilter@3c932222, com.cg.security.JwtRequestFilter@3369fe5c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ae194ad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53f04a20, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6bd9a104, org.springframework.security.web.session.SessionManagementFilter@508bd0d5, org.springframework.security.web.access.ExceptionTranslationFilter@374d0329, org.springframework.security.web.access.intercept.AuthorizationFilter@bc16dcd]
+24-08-2023 16:18:45.712 [main] INFO  c.c.EmployeesHrmsManjiriApplicationTests.logStarted - Started EmployeesHrmsManjiriApplicationTests in 1.767 seconds (process running for 18.7)
+24-08-2023 16:18:46.511 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+24-08-2023 16:18:46.515 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+24-08-2023 16:18:46.532 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+24-08-2023 16:18:46.539 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+24-08-2023 16:18:46.540 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown initiated...
+24-08-2023 16:18:46.558 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown completed.
+24-08-2023 16:18:46.562 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+24-08-2023 16:18:46.563 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown initiated...
+24-08-2023 16:18:46.574 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown completed.
+24-08-2023 16:44:58.319 [main] INFO  com.cg.controller.AdminConsumerTest.logStarting - Starting AdminConsumerTest using Java 17.0.7 with PID 13068 (started by manji in D:\CG_Self_Eval_4_Aug_2023\SpringBootJWT_JPA\EmployeesHRMS_Manjiri)
+24-08-2023 16:44:58.323 [main] INFO  com.cg.controller.AdminConsumerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+24-08-2023 16:44:59.253 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+24-08-2023 16:44:59.341 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 77 ms. Found 7 JPA repository interfaces.
+24-08-2023 16:45:01.521 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+24-08-2023 16:45:01.656 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.2.6.Final
+24-08-2023 16:45:01.665 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000406: Using bytecode reflection optimizer
+24-08-2023 16:45:01.940 [main] INFO  o.h.b.i.BytecodeProviderInitiator.buildBytecodeProvider - HHH000021: Bytecode provider name : bytebuddy
+24-08-2023 16:45:01.959 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+24-08-2023 16:45:02.001 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+24-08-2023 16:45:02.462 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a58db42
+24-08-2023 16:45:02.465 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+24-08-2023 16:45:02.507 [main] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+24-08-2023 16:45:03.202 [main] INFO  o.h.b.i.BytecodeProviderInitiator.buildBytecodeProvider - HHH000021: Bytecode provider name : bytebuddy
+24-08-2023 16:45:04.182 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-08-2023 16:45:04.186 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+24-08-2023 16:45:04.426 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+24-08-2023 16:45:06.353 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@60abe420, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21e60eed, org.springframework.security.web.context.SecurityContextHolderFilter@23e54c8a, org.springframework.security.web.header.HeaderWriterFilter@409b1740, org.springframework.web.filter.CorsFilter@2b43eb71, org.springframework.security.web.authentication.logout.LogoutFilter@19faa9dc, com.cg.security.JwtRequestFilter@684eb4a0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@736af6f3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a304820, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f32fe68, org.springframework.security.web.session.SessionManagementFilter@35e63d26, org.springframework.security.web.access.ExceptionTranslationFilter@6cbb79c3, org.springframework.security.web.access.intercept.AuthorizationFilter@6fb3d3bb]
+24-08-2023 16:45:06.765 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory.<clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+24-08-2023 16:45:07.646 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+24-08-2023 16:45:07.647 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+24-08-2023 16:45:07.650 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 2 ms
+24-08-2023 16:45:07.697 [main] INFO  com.cg.controller.AdminConsumerTest.logStarted - Started AdminConsumerTest in 9.791 seconds (process running for 11.044)
+24-08-2023 16:45:07.929 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:07 IST 2023 ,1692875707926
+24-08-2023 16:45:07.934 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893707926 , Date = Thu Aug 24 21:45:07 IST 2023
+24-08-2023 16:45:08.275 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:08 IST 2023 ,1692875708275
+24-08-2023 16:45:08.276 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893708275 , Date = Thu Aug 24 21:45:08 IST 2023
+24-08-2023 16:45:08.286 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Number of years. Minimum years should be 1
+24-08-2023 16:45:08.387 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:08 IST 2023 ,1692875708387
+24-08-2023 16:45:08.388 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893708387 , Date = Thu Aug 24 21:45:08 IST 2023
+24-08-2023 16:45:08.488 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:08 IST 2023 ,1692875708488
+24-08-2023 16:45:08.488 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893708488 , Date = Thu Aug 24 21:45:08 IST 2023
+24-08-2023 16:45:08.493 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Number of years. Minimum years should be 1
+24-08-2023 16:45:08.577 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:08 IST 2023 ,1692875708577
+24-08-2023 16:45:08.578 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893708577 , Date = Thu Aug 24 21:45:08 IST 2023
+24-08-2023 16:45:08.717 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:08 IST 2023 ,1692875708717
+24-08-2023 16:45:08.718 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893708717 , Date = Thu Aug 24 21:45:08 IST 2023
+24-08-2023 16:45:08.723 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Year. Year should start from 1984.
+24-08-2023 16:45:08.825 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:08 IST 2023 ,1692875708825
+24-08-2023 16:45:08.826 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893708825 , Date = Thu Aug 24 21:45:08 IST 2023
+24-08-2023 16:45:08.934 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:08 IST 2023 ,1692875708934
+24-08-2023 16:45:08.938 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893708934 , Date = Thu Aug 24 21:45:08 IST 2023
+24-08-2023 16:45:08.949 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Year. Year should start from 1984.
+24-08-2023 16:45:09.059 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:09 IST 2023 ,1692875709058
+24-08-2023 16:45:09.059 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893709058 , Date = Thu Aug 24 21:45:09 IST 2023
+24-08-2023 16:45:09.222 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:09 IST 2023 ,1692875709222
+24-08-2023 16:45:09.225 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893709222 , Date = Thu Aug 24 21:45:09 IST 2023
+24-08-2023 16:45:09.240 [main] ERROR com.cg.advice.ExceptionAdvice.recordNotFoundHandler - null
+24-08-2023 16:45:09.346 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:09 IST 2023 ,1692875709346
+24-08-2023 16:45:09.346 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893709346 , Date = Thu Aug 24 21:45:09 IST 2023
+24-08-2023 16:45:09.400 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Record exist. Please assign different Department
+24-08-2023 16:45:09.501 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:09 IST 2023 ,1692875709501
+24-08-2023 16:45:09.501 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893709501 , Date = Thu Aug 24 21:45:09 IST 2023
+24-08-2023 16:45:09.507 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid From Date
+24-08-2023 16:45:09.612 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:09 IST 2023 ,1692875709612
+24-08-2023 16:45:09.612 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893709612 , Date = Thu Aug 24 21:45:09 IST 2023
+24-08-2023 16:45:09.620 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Dates. 'fromDate' should be before 'toDate'
+24-08-2023 16:45:09.724 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:09 IST 2023 ,1692875709724
+24-08-2023 16:45:09.725 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893709724 , Date = Thu Aug 24 21:45:09 IST 2023
+24-08-2023 16:45:09.842 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:09 IST 2023 ,1692875709842
+24-08-2023 16:45:09.842 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893709842 , Date = Thu Aug 24 21:45:09 IST 2023
+24-08-2023 16:45:09.853 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Record exists. Please assign different employee as manager
+24-08-2023 16:45:09.959 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:09 IST 2023 ,1692875709959
+24-08-2023 16:45:09.960 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893709959 , Date = Thu Aug 24 21:45:09 IST 2023
+24-08-2023 16:45:09.967 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Employee is not in the same department. Assign Same department employee as Manager
+24-08-2023 16:45:10.075 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:10 IST 2023 ,1692875710075
+24-08-2023 16:45:10.076 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893710075 , Date = Thu Aug 24 21:45:10 IST 2023
+24-08-2023 16:45:10.083 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invlid From Date
+24-08-2023 16:45:10.184 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:10 IST 2023 ,1692875710184
+24-08-2023 16:45:10.184 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893710184 , Date = Thu Aug 24 21:45:10 IST 2023
+24-08-2023 16:45:10.191 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Dates. 'fromDate' should be before 'toDate'
+24-08-2023 16:45:10.294 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:10 IST 2023 ,1692875710294
+24-08-2023 16:45:10.295 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893710294 , Date = Thu Aug 24 21:45:10 IST 2023
+24-08-2023 16:45:10.302 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Not eligible
+24-08-2023 16:45:10.401 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:10 IST 2023 ,1692875710400
+24-08-2023 16:45:10.401 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893710400 , Date = Thu Aug 24 21:45:10 IST 2023
+24-08-2023 16:45:10.501 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:10 IST 2023 ,1692875710501
+24-08-2023 16:45:10.502 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893710501 , Date = Thu Aug 24 21:45:10 IST 2023
+24-08-2023 16:45:10.509 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Record Exists. Choose another title and from date
+24-08-2023 16:45:10.608 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:10 IST 2023 ,1692875710608
+24-08-2023 16:45:10.608 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893710608 , Date = Thu Aug 24 21:45:10 IST 2023
+24-08-2023 16:45:10.616 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Change Title
+24-08-2023 16:45:10.707 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:10 IST 2023 ,1692875710707
+24-08-2023 16:45:10.708 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893710707 , Date = Thu Aug 24 21:45:10 IST 2023
+24-08-2023 16:45:10.712 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invlid From Date
+24-08-2023 16:45:10.807 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:10 IST 2023 ,1692875710807
+24-08-2023 16:45:10.808 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893710807 , Date = Thu Aug 24 21:45:10 IST 2023
+24-08-2023 16:45:10.814 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Invalid Dates. 'fromDate' should be before 'toDate'
+24-08-2023 16:45:10.918 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:10 IST 2023 ,1692875710918
+24-08-2023 16:45:10.918 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893710918 , Date = Thu Aug 24 21:45:10 IST 2023
+24-08-2023 16:45:10.924 [main] ERROR com.cg.advice.ExceptionAdvice.invalidDataHandler - Not Eligible
+24-08-2023 16:45:11.027 [main] INFO  com.cg.security.JwtUtil.createToken - Issued Date is Thu Aug 24 16:45:11 IST 2023 ,1692875711027
+24-08-2023 16:45:11.028 [main] INFO  com.cg.security.JwtUtil.createToken - Token expiring on 1692893711027 , Date = Thu Aug 24 21:45:11 IST 2023
+24-08-2023 16:45:11.050 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+24-08-2023 16:45:11.053 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+24-08-2023 16:45:11.079 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.

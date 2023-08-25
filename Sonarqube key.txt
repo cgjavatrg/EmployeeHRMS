@@ -1,0 +1,1 @@
+clean verify sonar:sonar -Dsonar.projectKey=EmployeeHrms2 -Dsonar.projectName='EmployeeHrms2' -Dsonar.host.url=http://localhost:9000  -Dsonar.token=sqp_b2f484a8df82b9906e75e6c79b73f52c847d3c7a
